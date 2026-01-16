@@ -4,8 +4,8 @@ import java.util.HashMap;
 
 public class App{
     public static void main(String[] args){
-        int[] arr = {2,7,11,15};
-        int target = 9;
+        int[] arr = {3,2,4};
+        int target = 6;
 
         int[] answer = Solution.twoIndexSumTarget(target, arr);
 
@@ -21,25 +21,33 @@ public class App{
         }
     }
 }
+gi
 
-class Solution{
+class Solution2{
     public static int[] twoIndexSumTarget(int target, int [] arr){
-        HashMap<Integer, Integer> correlation = new HashMap<>();
-        int[] answer = new int[2];
-
-        for(int i = 0; i < arr.length; i++){
-            correlation.put(target - arr[i], i);
-        }
-
+        int[] a = new int[2];
+        
         for (int i = 0; i < arr.length; i++) {
-            if(correlation.containsKey(arr[i])){
-                answer[0] = correlation.get(arr[i]);
-                answer[1] = i;
-
-                return answer;
+            for (int j = 0; j < a.length; j++) {
+                if( arr[i] + arr[j] == target && i != j){
+                    a[0] = i;
+                    a[1] = j;
+                }
             }
         }
-        
-        return null;
+
+
+        return a;
     }
 }
+
+/*
+2,7,11,15
+9
+
+1 2  3  4
+7 2 -2 -6
+
+
+
+*/
