@@ -1,13 +1,14 @@
 package twoIndexSumTarget;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class App{
     public static void main(String[] args){
         int[] arr = {3,2,4};
         int target = 6;
 
-        int[] answer = Solution.twoIndexSumTarget(target, arr);
+        int[] answer = Solution.twoSum(arr, target);
 
         try {
             System.out.print("index: [");
@@ -21,33 +22,20 @@ public class App{
         }
     }
 }
-gi
 
-class Solution2{
-    public static int[] twoIndexSumTarget(int target, int [] arr){
-        int[] a = new int[2];
+class Solution{
+    public static int[] twoSum(int [] arr, int target){
+        Map<Integer, Integer> map = new HashMap<>();
         
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < a.length; j++) {
-                if( arr[i] + arr[j] == target && i != j){
-                    a[0] = i;
-                    a[1] = j;
-                }
-            }
+        for(int i = 0; i < arr.length; i++){
+            int complement = target - arr[i];
+
+            if(map.containsKey(complement)){
+                return new int[] {map.get(complement), i};
+            } else map.put(arr[i], i);
+    
         }
 
-
-        return a;
+        return null;
     }
-}
-
-/*
-2,7,11,15
-9
-
-1 2  3  4
-7 2 -2 -6
-
-
-
-*/
+} 
