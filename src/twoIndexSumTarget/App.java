@@ -39,3 +39,16 @@ class Solution{
         return null;
     }
 } 
+
+
+/*
+atual + x = target
+x = target - atual
+
+map(atual, indice)
+
+loop -> map.contains(x)?
+    sim -> return (i, map.get(x))
+    não -> map.put(atual, i)
+
+*/
