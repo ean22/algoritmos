@@ -1,11 +1,10 @@
 package romanToInteger;
 
 import java.util.Map;
-import java.util.Map;
 
 public class App {
     public static void main(String[] args){
-        String num = "XLIX";
+        String num = "mdcxcv";
 
         System.out.println("""
                 %s = %d
@@ -46,10 +45,38 @@ public class App {
 
 
 class Solution {
-    public int romanToInt(String s) {
-        
+    final static private Map<Character, Integer> map = Map.of(
+        'I', 1,
+        'V', 5,
+        'X', 10,
+        'L', 50,
+        'C', 100,
+        'D', 500,
+        'M', 1000
+    );
 
+    static public int romanToInt(String s) {
+        int sum = 0;
+        int i = 0;
+
+        for (i = 0; i < s.length() - 1; i++) {
+            int actual = map.get(s.toUpperCase().charAt(i));
+            int next = map.get(s.toUpperCase().charAt(i + 1)); 
+            
+            if(actual >= next){
+                sum += actual;
+            } else sum -= actual;
+
+        }
         
-        return 0;
+        sum += map.get(s.toUpperCase().charAt(i));
+        
+        return sum;
     }
 }
+
+/*
+
+MCMXCIV
+
+*/
