@@ -21,8 +21,6 @@ class Solution {
             if(word.length() < minor) minor = word.length();
         }
 
-
-
         for (letra = 0; letra < minor; letra++) {
             
             char c = strs[0].charAt(letra);
