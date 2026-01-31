@@ -2,7 +2,7 @@ package palindromeNumber;
 
 public class App {
     public static void main(String[] args){
-        int num = -11211;
+        int num = 1211;
 
         Solution s = new Solution();
 
@@ -37,19 +37,36 @@ public class App {
 // }
 
 
+// class Solution {
+//     public boolean isPalindrome(int x) {
+//         String num = String.valueOf(x);
+//         int left = 0;
+//         int right = num.length() - 1;
+        
+//         while(left < right){
+//             if( num.charAt(left) != num.charAt(right)) return false;
+
+//             left++;
+//             right--;
+//         }
+
+//         return true;
+//     }
+// }
+
 class Solution {
     public boolean isPalindrome(int x) {
-        String num = String.valueOf(x);
-        int left = 0;
-        int right = num.length() - 1;
-        
-        while(left < right){
-            if( num.charAt(left) != num.charAt(right)) return false;
+        if (x < 0) return false;
 
-            left++;
-            right--;
+        String str = String.valueOf(x);
+        int left = 0;
+        int right = str.length() -1;
+
+        for (left = 0; left < right; left++, right--) {
+            if (str.charAt(left) != str.charAt(right)) return false;
         }
 
         return true;
     }
 }
+
