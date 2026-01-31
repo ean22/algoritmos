@@ -13,47 +13,6 @@ public class App {
     }
 }
 
-// class Solution{
-//     public static boolean isPalindrome(int num){
-        
-//         if(num < 0) return false;
-
-//         return checkPalindrome(String.valueOf(num));
-//     }
-
-//     private static boolean checkPalindrome(String num){
-//         int left = 0;
-//         int right = num.length() - 1;
-
-//         while(left < right){
-//             if(num.charAt(left) != num.charAt(right)) return false;
-
-//             left++;
-//             right--;
-//         }
-
-//         return true;
-//     }
-// }
-
-
-// class Solution {
-//     public boolean isPalindrome(int x) {
-//         String num = String.valueOf(x);
-//         int left = 0;
-//         int right = num.length() - 1;
-        
-//         while(left < right){
-//             if( num.charAt(left) != num.charAt(right)) return false;
-
-//             left++;
-//             right--;
-//         }
-
-//         return true;
-//     }
-// }
-
 class Solution {
     public boolean isPalindrome(int x) {
         if (x < 0) return false;
@@ -62,8 +21,11 @@ class Solution {
         int left = 0;
         int right = str.length() -1;
 
-        for (left = 0; left < right; left++, right--) {
+        while (left < right) {
             if (str.charAt(left) != str.charAt(right)) return false;
+
+            left++;
+            right--;
         }
 
         return true;

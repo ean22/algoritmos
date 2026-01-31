@@ -40,7 +40,6 @@ class Solution{
     }
 } 
 
-
 /*
 atual + x = target
 x = target - atual
