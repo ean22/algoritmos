@@ -4,7 +4,7 @@ public class App {
     public static void main(String[] args) {
         int[] arr = {-3,-1,0,0,0,3,3};
         
-        System.out.print("Array original: ");
+        System.out.print("\nArray original: ");
         for (int i : arr) {
             System.out.print(i + ", ");
         }
